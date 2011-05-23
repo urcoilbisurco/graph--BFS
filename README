@@ -1,3 +1,9 @@
 the code isn't perfect (it takes me 20 minutes to do it).
 
-simply run bfs.rb. change the graph nodes and arcs inside graph.rb.
+simply run bfs.rb or dfs.rb.
+change the graph nodes and arcs inside utils.rb.
+
+TODO:
+- better way to change graph nodes
+- little user interface
+- add other alghoritms (Prim, kruskal)
