@@ -4,7 +4,6 @@ class Bfs
   attr_accessor :nodi
   def initialize(g)
     @nodi=crea_nodi(g)
-    puts "==> inizializzazione effettuata"
   end
 
   def crea_nodi(g)
@@ -12,7 +11,7 @@ class Bfs
     for v in g.v do
       nodi<<Nodo.new(v, g)
     end
-    puts "=> nodi creati!"
+    puts "=> created nodes!"
     nodi
   end
   
@@ -20,7 +19,7 @@ class Bfs
     s=find(@nodi, s)
     s.color=1
     s.distance=0
-    a=Array.new
+    a=[]
     a<<s
     while !a.empty?
       w=a.first
@@ -38,13 +37,7 @@ class Bfs
   end
   
   def find(nodi,s)
-    output=nil
-    nodi.each do |n|
-      if n.key==s
-        output=n
-      end
-    end
-    output
+    nodi.each {|n|  return n if n.key==s}
   end
   
   def to_s

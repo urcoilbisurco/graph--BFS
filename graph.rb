@@ -13,12 +13,12 @@ class Arcs
     self.end_a =[]
     array.each do |point|
       point=point.split(',')
-      self.start_a<<point[0]
-      self.end_a<<point[1]
+      start_a<<point[0]
+      end_a<<point[1]
     end
   end
   def each(&block)
-    0.upto(@start_a.length - 1) do |e|
+    0.upto(@start_a.length - 1) do |e| 
       yield start_a[e].to_i, end_a[e].to_i
     end
   end
@@ -36,16 +36,15 @@ class Nodo
   end
   
   def get_adj(nodi, graph, b)
-    array=Array.new
+    array=[]
     graph.e.each do |x,y|
       array<<b.find(b.nodi, graph.v[y]) if graph.v[x]==self.key
       array<<b.find(b.nodi, graph.v[x]) if graph.v[y]==self.key
     end
     array
-    
   end
   
   def to_s
-    "nodo #{self.key} con distanza #{self.distance}\n"
+    "node #{self.key} with distance #{self.distance}\n"
   end
 end
